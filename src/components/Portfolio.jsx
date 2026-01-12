@@ -58,7 +58,7 @@ const Portfolio = ({ darkMode }) => {
                             </span>
                         </div>
                         
-                        <h1 className="text-7xl md:text-[100px] font-black leading-[0.85] tracking-tighter">
+                        <h1 className="text-6xl md:text-[100px] font-black leading-[0.85] tracking-tighter">
                             ABDUREZAK <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-orange-400 to-amber-500">
                                 SHEMSU.
@@ -117,7 +117,7 @@ const Portfolio = ({ darkMode }) => {
                                 <img 
                                     src={profilePic} 
                                     alt="Abdurezak Shemsu" 
-                                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                                    className="w-full h-full object-cover  hover:grayscale transition-all duration-1000 scale-105 group-hover:scale-100"
                                 />
                                 {/* Overlay Gradient */}
                                 <div className={`absolute inset-0 bg-gradient-to-t via-transparent ${darkMode ? 'from-gray-950/80' : 'from-gray-900/20'}`} />

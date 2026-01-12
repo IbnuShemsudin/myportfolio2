@@ -40,7 +40,7 @@ const About = ({ darkMode }) => {
                             <img 
                                 src={profilePic} 
                                 alt="Abdurezak Shemsu Profile" 
-                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                                className="w-full h-full object-cover  group-hover:grayscale transition-all duration-700 group-hover:scale-105"
                             />
                             
                             {/* Glassmorphic Skill Overlay */}
