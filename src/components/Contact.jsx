@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Send, Github, Instagram, CheckCircle, AlertCircle, MessageSquare, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Instagram, CheckCircle, AlertCircle, MessageSquare } from 'lucide-react';
 
 const Contact = ({ darkMode }) => {
     const [status, setStatus] = useState('idle');
@@ -16,14 +16,16 @@ const Contact = ({ darkMode }) => {
         };
 
         try {
-            // Updated to use a dynamic variable for deployment readiness
-            const API_URL = window.location.hostname === 'localhost' 
-                ? 'http://localhost:5000/api/contact' 
-                : 'https://your-backend-service.onrender.com/api/contact';
+            // Updated to Formspree for live deployment
+            // REPLACE 'mqakpzoz' with your unique Formspree ID
+            const API_URL = 'https://formspree.io/f/mykkykan'; 
 
             const response = await fetch(API_URL, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                },
                 body: JSON.stringify(formData),
             });
 
