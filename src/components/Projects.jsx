@@ -118,62 +118,30 @@ const Projects = ({ darkMode }) => {
                 </div>
 
                 {/* Bento Grid */}
-                <motion.div layout className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px]">
-                    <AnimatePresence mode='popLayout'>
-                        {filteredProjects.map((project) => (
-                            <motion.div
-                                layout
-                                key={project.id}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.5, ease: "circOut" }}
-                                className={`group relative rounded-[3rem] p-10 border overflow-hidden flex flex-col justify-between ${project.size} 
-                                    ${darkMode ? 'bg-gray-900/40 border-gray-800 hover:border-gray-700' : 'bg-white border-gray-100 hover:shadow-2xl hover:shadow-gray-200/50'} 
-                                    transition-all duration-500`}
-                            >
-                                {/* Dynamic Hover Gradient */}
-                                <div className={`absolute -right-24 -top-24 w-80 h-80 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 blur-[100px] transition-opacity duration-700`} />
-                                
-                                <div>
-                                    <div className="flex justify-between items-start mb-8">
-                                        <div className={`w-16 h-16 rounded-[1.5rem] flex items-center justify-center text-white bg-gradient-to-br ${project.color} shadow-2xl shadow-orange-500/20 group-hover:scale-110 transition-transform duration-500`}>
-                                            {project.icon}
-                                        </div>
-                                        <div className="flex gap-2">
-                                            {project.tech.map((t, i) => (
-                                                <span key={i} className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest border ${darkMode ? 'border-gray-700 bg-gray-800/50 text-gray-400' : 'border-gray-200 bg-gray-50 text-gray-500'}`}>
-                                                    {t}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    
-                                    <h3 className={`text-3xl font-black mb-4 tracking-tighter ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                        {project.title}
-                                    </h3>
-                                    <p className={`text-base leading-relaxed line-clamp-3 font-medium ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                                        {project.desc}
-                                    </p>
-                                </div>
-
-                                <div className="flex items-center justify-between pt-6 mt-auto">
-                                    <div className="flex gap-3">
-                                        <a href="#" className={`p-4 rounded-2xl transition-all border ${darkMode ? 'border-gray-800 bg-gray-950 text-white hover:bg-orange-500 hover:border-orange-500' : 'bg-white border-gray-100 text-gray-900 hover:bg-orange-500 hover:text-white shadow-sm'}`}>
-                                            <ExternalLink size={20} />
-                                        </a>
-                                        <a href="#" className={`p-4 rounded-2xl transition-all border ${darkMode ? 'border-gray-800 bg-gray-950 text-white hover:bg-orange-500 hover:border-orange-500' : 'bg-white border-gray-100 text-gray-900 hover:bg-orange-500 hover:text-white shadow-sm'}`}>
-                                            <Github size={20} />
-                                        </a>
-                                    </div>
-                                    <div className="text-right">
-                                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-500">{project.category}</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
+                {/* Updated Grid Container */}
+<motion.div 
+    layout 
+    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[320px]"
+>
+    <AnimatePresence mode='popLayout'>
+        {filteredProjects.map((project) => (
+            <motion.div
+                layout
+                key={project.id}
+                {/* We change the size logic: 
+                   On Mobile: always 1 column (col-span-1)
+                   On Desktop: use the project.size (md:col-span-2, etc)
+                */}
+                className={`group relative rounded-[2.5rem] p-8 md:p-10 border overflow-hidden flex flex-col justify-between 
+                    col-span-1 ${project.size} 
+                    ${darkMode ? 'bg-gray-900/40 border-gray-800' : 'bg-white border-gray-100 shadow-xl shadow-gray-200/50'} 
+                    transition-all duration-500`}
+            >
+                {/* Content inside stays the same... */}
+            </motion.div>
+        ))}
+    </AnimatePresence>
+</motion.div>
             </div>
         </section>
     );
