@@ -4,22 +4,22 @@ import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
     {
-        name: "James Wilson",
-        role: "CEO at TechFlow",
+        name: "Gurmessa Kedir",
+        role: "CEO, Tech Innovations",
         content: "Abdurezak is a top-tier engineer. He delivered our MVP three weeks ahead of schedule with code quality that exceeded our expectations.",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=James"
+        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Gurmessa"
     },
     {
-        name: "Sarah Chen",
-        role: "Product Manager",
+        name: "Hayatudin Jemal",
+        role: "CEO, MelaVerse Tech",
         content: "The attention to detail in the UI/UX is incredible. Our conversion rate increased by 40% after the redesign he implemented.",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Hayatudin"
     },
     {
-        name: "Marcus Thorne",
+        name: "Kenenisa Meiso",
         role: "Senior Developer",
         content: "A brilliant collaborator. His mastery of the MERN stack and clean architectural patterns made him an asset to our team.",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus"
+        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kenenisa"
     }
 ];
 
@@ -29,6 +29,11 @@ const logos = [
     { name: "MongoDB", url: "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" },
     { name: "Tailwind", url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" },
     { name: "Vercel", url: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" },
+    // { name: "Framer", url: "https://upload.wikimedia.org/wikipedia/commons/3/33/Framer_logo.svg" },
+    { name: "Django", url: "https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" },
+    { name: "Python", url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" },
+    { name: "React Native", url: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
+    
 ];
 
 const Testimonials = ({ darkMode }) => {
