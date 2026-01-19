@@ -1,9 +1,26 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { User, Code2, Coffee, Rocket, Download, ExternalLink, ShieldCheck, Zap, Globe } from 'lucide-react';
-import profilePic from '../assets/profilepic.png';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Rocket, Download, ExternalLink, ShieldCheck, Zap, Globe } from 'lucide-react';
+
+// --- IMPORT YOUR IMAGES HERE ---
+import profilePic1 from '../assets/profile2.png'
+import profilePic2 from '../assets/profilepic.png'; 
+// import profilePic3 from '../assets/profilepic3.png'; 
 
 const About = ({ darkMode }) => {
+    // 1. Array of your images
+    const images = [profilePic1, profilePic2]; 
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // 2. Auto-cycle timer
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 5000); // Switches every 5 seconds
+        return () => clearInterval(timer);
+    }, [images.length]);
+
     const onButtonClick = () => {
         const pdfUrl = "resume.pdf";
         const link = document.createElement("a");
@@ -37,20 +54,42 @@ const About = ({ darkMode }) => {
                     {/* --- Left Column: Visual Portrait --- */}
                     <div className="lg:col-span-5 relative group">
                         <div className={`relative aspect-[4/5] rounded-[4rem] overflow-hidden border-8 transition-all duration-500 ${darkMode ? 'border-gray-900 shadow-2xl shadow-black/50' : 'border-gray-50 shadow-xl shadow-orange-100/50'}`}>
-                            <img 
-                                src={profilePic} 
-                                alt="Abdurezak Shemsu Profile" 
-                                className="w-full h-full object-cover  group-hover:grayscale transition-all duration-700 group-hover:scale-105"
-                            />
                             
+                            {/* Animated Image Switcher */}
+                            <AnimatePresence mode="wait">
+                                <motion.img 
+                                    key={currentIndex}
+                                    src={images[currentIndex]} 
+                                    alt="Abdurezak Shemsu Profile" 
+                                    initial={{ opacity: 0, scale: 1.1 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                    transition={{ duration: 0.8 }}
+                                    className="absolute inset-0 w-full h-full object-cover group-hover:grayscale transition-all duration-700"
+                                />
+                            </AnimatePresence>
+                            
+                            {/* Pagination Dots */}
+                            <div className="absolute top-6 right-8 z-30 flex gap-2">
+                                {images.map((_, i) => (
+                                    <button
+                                        key={i}
+                                        onClick={() => setCurrentIndex(i)}
+                                        className={`h-1.5 transition-all duration-300 rounded-full ${
+                                            currentIndex === i ? 'w-8 bg-orange-500' : 'w-2 bg-white/50 hover:bg-white'
+                                        }`}
+                                    />
+                                ))}
+                            </div>
+
                             {/* Glassmorphic Skill Overlay */}
-                            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-3xl backdrop-blur-xl bg-white/10 border border-white/20 hidden md:block">
+                            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-3xl backdrop-blur-xl bg-white/10 border border-white/20 hidden md:block z-20">
                                 <div className="flex justify-between items-center text-white">
                                     <div>
                                         <p className="text-[10px] font-black uppercase tracking-widest opacity-70">Focus</p>
                                         <p className="text-sm font-bold">Scalable Systems</p>
                                     </div>
-                                    <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
+                                    <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
                                         <Rocket size={18} />
                                     </div>
                                 </div>

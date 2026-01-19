@@ -5,6 +5,8 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import About from './components/About';
+import Testimonials from './components/Testimonials';
+
 
 function App() {
   // 1. Theme State Logic
@@ -37,7 +39,7 @@ function App() {
         <Skills darkMode={darkMode} />
         
         <Projects darkMode={darkMode} />
-        
+        <Testimonials darkMode ={darkMode} />
         <Contact darkMode={darkMode} />
       </main>
 
