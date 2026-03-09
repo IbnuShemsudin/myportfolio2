@@ -11,7 +11,10 @@ import {
     Layers,
     ArrowUpRight,
     X,
-    CheckCircle2
+    CheckCircle2,
+    Activity,
+    CreditCard,
+    Cpu
 } from 'lucide-react';
 
 const Projects = ({ darkMode }) => {
@@ -23,81 +26,108 @@ const Projects = ({ darkMode }) => {
     const projects = [
         {
             id: 1,
-            title: "E-Commerce OS",
+            title: "ShemsuSuk AI",
             category: "Web",
             desc: "Enterprise-grade retail engine with real-time inventory sync and Stripe integration.",
             longDesc: "A robust retail solution built for high-scale traffic. It includes a custom-built dashboard for inventory management, real-time analytics, and a seamless Stripe-powered checkout experience optimized for mobile conversions.",
-            tech: ["Next.js", "Tailwind", "Stripe"],
+            tech: ["React.js", "Tailwind", "Node.js", "MongoDb"],
             features: ["Real-time Inventory Sync", "Multi-currency Support", "Advanced Admin Analytics"],
             image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2000",
             size: "md:col-span-2 md:row-span-2",
             color: "from-orange-500 to-rose-600",
             icon: <ShoppingCart size={28} />,
+            demoUrl: "https://shemsusuk.vercel.app", // Added demo link
+            githubUrl: "#"
+        },
+        {
+            id: 8,
+            title: "Ethio Fit",
+            category: "Web",
+            desc: "A premium fitness API and gallery platform for gym management and workout tracking.",
+            longDesc: "Ethio Fit is a comprehensive fitness ecosystem. It provides a high-performance API for workout routines and a gallery platform that handles pricing protocols and category management for modern fitness centers.",
+            tech: ["MERN Stack", "Express", "Vite"],
+            features: ["Seeded Workout Database", "Pricing Protocols", "Category-based Gallery"],
+            image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2000",
+            size: "md:col-span-1 md:row-span-2",
+            color: "from-red-500 to-orange-600",
+            icon: <Activity size={28} />,
+            demoUrl: "https://https://ethiofit.vercel.app",
+            githubUrl: "#"
         },
         {
             id: 6,
             title: "Emdebir LMS",
             category: "Web",
             desc: "A digital campus for Emdebir Highschool modernizing rural education access.",
-            longDesc: "This Learning Management System was designed to provide students and teachers in rural Ethiopia with digital access to curriculum materials, automated grade tracking, and offline-capable resource sharing.",
+            longDesc: "This Learning Management System was designed to provide students and teachers in rural Ethiopia with digital access to curriculum materials and automated grade tracking.",
             tech: ["React", "Node.js", "MongoDB"],
             features: ["Offline Resource Access", "Automated Gradebook", "Student Performance Reports"],
             image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2000",
             size: "md:col-span-1 md:row-span-2",
             color: "from-indigo-500 to-blue-600",
             icon: <Layers size={28} />,
+            demoUrl: "https://emdebir-lms.vercel.app",
+            githubUrl: "#"
         },
         {
-            id: 7,
-            title: "TaskMaster AI",
+            id: 9,
+            title: "Bloom AI",
             category: "AI",
-            desc: "Smart task manager that prioritizes to-dos using NLP and machine learning.",
-            longDesc: "TaskMaster uses Natural Language Processing to categorize user input and a custom ML model to rank tasks based on urgency and historical completion patterns.",
-            tech: ["Python", "TensorFlow", "React"],
-            features: ["NLP Task Input", "Predictive Scheduling", "Focus Mode Timer"],
-            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000",
-            size: "md:col-span-1 md:row-span-1",
-            color: "from-green-500 to-lime-600",
-            icon: <MessageSquare size={24} />,
+            desc: "Generative AI platform for creating high-fidelity assets using prompt engineering.",
+            longDesc: "Bloom AI leverages state-of-the-art diffusion models to allow users to generate professional-grade images and UI assets through a refined prompt engineering interface.",
+            tech: ["Python", "Next.js", "OpenAI"],
+            features: ["Prompt Optimization", "High-res Export", "Style Transfer"],
+            image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000",
+            size: "md:col-span-2 md:row-span-1",
+            color: "from-purple-500 to-indigo-600",
+            icon: <Cpu size={24} />,
+            demoUrl: "https://bloom-ai.demo",
+            githubUrl: "#"
         },
         {
             id: 2,
             title: "Guragigna Dict",
             category: "Mobile",
-            desc: "Preserving heritage through tech. Fast offline dictionary for the Guragigna language.",
-            longDesc: "A linguistically accurate, lightning-fast mobile dictionary designed to preserve the Guragigna language. Built with performance in mind, it works entirely offline with a local SQLite database.",
-            tech: ["RN", "SQLite"],
-            features: ["Instant Search", "Audio Pronunciations", "Favorites Collection"],
+            desc: "Fast offline dictionary for the Guragigna language preservation.",
+            longDesc: "A linguistically accurate, lightning-fast mobile dictionary designed to preserve heritage. It works entirely offline with a local SQLite database.",
+            tech: ["React Native", "SQLite"],
+            features: ["Instant Search", "Language Preservation", "Favorites Collection"],
             image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2000",
             size: "md:col-span-1 md:row-span-2",
             color: "from-amber-500 to-orange-600",
             icon: <Languages size={28} />,
+            demoUrl: "https://expo.dev/@abdurezak/guragigna",
+            githubUrl: "#"
         },
         {
-            id: 3,
-            title: "Support AI",
-            category: "AI",
-            desc: "LLM-powered support bot reducing response times by 60% with context-aware NLP.",
-            longDesc: "An intelligent support layer that integrates with existing helpdesks. It scans your documentation and provides instant, accurate answers to customers using RAG (Retrieval-Augmented Generation).",
-            tech: ["OpenAI", "Node", "VectorDB"],
-            features: ["RAG Architecture", "Human-in-the-loop handoff", "Multi-language Support"],
-            image: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?q=80&w=2000",
+            id: 10,
+            title: "EthioPay Dash",
+            category: "Web",
+            desc: "Next-gen fintech dashboard for tracking cross-border transactions.",
+            longDesc: "A specialized financial dashboard featuring real-time transaction monitoring, currency conversion charts, and automated reporting for regional businesses.",
+            tech: ["React", "Chart.js", "Firebase"],
+            features: ["Real-time Charts", "Secure Auth", "Export to PDF"],
+            image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2000",
             size: "md:col-span-1 md:row-span-1",
-            color: "from-blue-500 to-cyan-500",
-            icon: <MessageSquare size={24} />,
+            color: "from-blue-600 to-emerald-500",
+            icon: <CreditCard size={24} />,
+            demoUrl: "https://https://ethiofit.vercel.app",
+            githubUrl: "#"
         },
         {
             id: 4,
-            title: "Mamme Ecosystem",
+            title: "Mamme restaurant",
             category: "Web",
             desc: "Full restaurant management suite—from digital menus to kitchen automation.",
-            longDesc: "A comprehensive solution for the food service industry. It manages everything from the customer-facing QR menu to the kitchen display system (KDS) and inventory alerts.",
+            longDesc: "A comprehensive solution for the food service industry. It manages everything from the customer-facing QR menu to the kitchen display system (KDS).",
             tech: ["MERN", "Socket.io"],
             features: ["Real-time Order Sync", "Staff Scheduling", "QR Code Generation"],
             image: "https://images.unsplash.com/photo-1556742049-04ff4361cc5a?q=80&w=2000",
-            size: "md:col-span-2 md:row-span-1",
+            size: "md:col-span-1 md:row-span-1",
             color: "from-emerald-500 to-teal-600",
             icon: <Utensils size={24} />,
+            demoUrl: "https://mammerestaurant.vercel.app",
+            githubUrl: "#"
         }
     ];
 
@@ -184,8 +214,8 @@ const Projects = ({ darkMode }) => {
 
                                 <div className="flex items-center justify-between pt-6 mt-auto relative z-10">
                                     <div className="flex gap-2">
-                                        <a href="#" className={`p-3 rounded-xl border ${darkMode ? 'border-gray-800 text-white' : 'border-gray-100'}`}><Github size={18}/></a>
-                                        <a href="#" className={`p-3 rounded-xl border ${darkMode ? 'border-gray-800 text-white' : 'border-gray-100'}`}><ExternalLink size={18}/></a>
+                                        <a href={project.githubUrl} target="_blank" rel="noreferrer" className={`p-3 rounded-xl border ${darkMode ? 'border-gray-800 text-white hover:bg-white hover:text-black' : 'border-gray-100 hover:bg-black hover:text-white'} transition-all`}><Github size={18}/></a>
+                                        <a href={project.demoUrl} target="_blank" rel="noreferrer" className={`p-3 rounded-xl border ${darkMode ? 'border-gray-800 text-white hover:bg-orange-500' : 'border-gray-100 hover:bg-orange-500 hover:text-white'} transition-all`}><ExternalLink size={18}/></a>
                                     </div>
                                     <button 
                                         onClick={() => setSelectedProject(project)}
@@ -219,7 +249,7 @@ const Projects = ({ darkMode }) => {
                                 <div className="relative h-64 md:h-96 w-full overflow-hidden">
                                     <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" />
                                     <div className={`absolute inset-0 bg-gradient-to-t ${darkMode ? 'from-gray-900' : 'from-white'} to-transparent`} />
-                                    <button onClick={() => setSelectedProject(null)} className="absolute top-6 right-6 p-3 rounded-full bg-black/20 backdrop-blur-md text-white"><X size={20} /></button>
+                                    <button onClick={() => setSelectedProject(null)} className="absolute top-6 right-6 p-3 rounded-full bg-black/20 backdrop-blur-md text-white z-20"><X size={20} /></button>
                                 </div>
 
                                 <div className="p-8 md:p-12 -mt-20 relative z-10">
@@ -248,12 +278,22 @@ const Projects = ({ darkMode }) => {
                                                 ))}
                                             </ul>
                                             <div className="mt-10 pt-8 border-t border-gray-800/10 flex gap-4">
-                                                <button className="flex-1 py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-orange-500/20">
+                                                <a 
+                                                    href={selectedProject.demoUrl} 
+                                                    target="_blank" 
+                                                    rel="noreferrer"
+                                                    className="flex-1 py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-orange-500/20"
+                                                >
                                                     Live Demo <ExternalLink size={18}/>
-                                                </button>
-                                                <button className={`p-4 rounded-2xl border ${darkMode ? 'border-gray-800' : 'border-gray-200'} transition-colors hover:bg-orange-500 hover:text-white`}>
+                                                </a>
+                                                <a 
+                                                    href={selectedProject.githubUrl}
+                                                    target="_blank" 
+                                                    rel="noreferrer"
+                                                    className={`p-4 rounded-2xl border ${darkMode ? 'border-gray-800' : 'border-gray-200'} transition-colors hover:bg-orange-500 hover:text-white`}
+                                                >
                                                     <Github size={20}/>
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

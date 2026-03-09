@@ -6,7 +6,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
-
+import Footer from "./components/Footer";
 
 function App() {
   // 1. Theme State Logic
@@ -41,6 +41,7 @@ function App() {
         <Projects darkMode={darkMode} />
         <Testimonials darkMode ={darkMode} />
         <Contact darkMode={darkMode} />
+        <Footer darkMode={darkMode} />
       </main>
 
       {/* 5. Custom Global Cursor (Optional/Bonus) */}
